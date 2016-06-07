@@ -1,0 +1,14 @@
+{
+  "name": "cristifalcas-forward_journald",
+  "version": "0.1.0",
+  "author": "cristifalcas",
+  "summary": "Install forward-journald",
+  "license": "Apache-2.0",
+  "source": "https://github.com/cristifalcas/puppet-forward_journald",
+  "project_page": "https://github.com/projectatomic/forward-journald",
+  "issues_url": "https://github.com/cristifalcas/puppet-forward_journald/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
