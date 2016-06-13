@@ -1,0 +1,4 @@
+fixtures:
+  repositories:
+  symlinks:
+    forward_journald: "#{source_dir}"

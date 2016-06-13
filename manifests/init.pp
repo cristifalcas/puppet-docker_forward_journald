@@ -1,40 +1,31 @@
 # Class: forward_journald
-# ===========================
+#===========================
 #
-# Full description of class forward_journald here.
+# Installs docker-forward-journald package.
 #
 # Parameters
-# ----------
+#----------
 #
-# Document parameters here.
+# * ensure_package
+# Version of package to be installed
 #
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
+# * package_name
+# Name of the package to be installed
 #
-# Variables
-# ----------
+# * binary_chmod
+# By default the binary is set to mode 0700 (only root has access)
+# This can be changed with this parameter
 #
-# Here you should define a list of variables that this module would require.
-#
-# * `sample variable`
-#  Explanation of how this variable affects the function of this class and if
-#  it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#  External Node Classifier as a comma separated list of hostnames." (Note,
-#  global variables should be avoided in favor of class parameters as
-#  of Puppet 2.6.)
-#
-# Authors
-# -------
-#
-# Author Name <author@domain.com>
-#
-# Copyright
-# ---------
-#
-# Copyright 2016 Your name here, unless otherwise noted.
-#
-class forward_journald {
-
-
+class forward_journald (
+  $ensure_package = 'installed',
+  $package_name = 'docker-forward-journald',
+  $binary_chmod = '0700',
+) {
+  package { $package_name:
+    ensure => $ensure_package,
+  } ->
+  file { '/usr/bin/forward-journald':
+    ensure => file,
+    mode   => $binary_chmod,
+  }
 }
