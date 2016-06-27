@@ -29,3 +29,8 @@ class forward_journald (
     mode   => $binary_chmod,
   }
 }
+ => file,
+      mode   => $binary_chmod,
+    }
+  }
+}

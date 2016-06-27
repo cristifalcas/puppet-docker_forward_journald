@@ -1,6 +1,6 @@
 {
 	"name": "cristifalcas-forward_journald",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"author": "cristifalcas",
 	"summary": "Install forward-journald",
 	"license": "Apache-2.0",
@@ -9,10 +9,18 @@
 	"issues_url": "https://github.com/cristifalcas/puppet-forward_journald/issues",
 	"tags": [ "forward_journald"
 	],
+	"dependencies": [],
+	"requirements": [{
+			"name": "pe",
+			"version_requirement": "3.x"
+		},{
+			"name": "puppet",
+			"version_requirement": ">=3.4.0 <5.0.0"
+		}
+	],
 	"operatingsystem_support": [{
 			"operatingsystem": "RedHat",
-			"operatingsystemrelease": [ "6",
-				"7"
+			"operatingsystemrelease": [ "7"
 			]
 		},{
 			"operatingsystem": "CentOS",
@@ -31,7 +39,5 @@
 			"operatingsystemrelease": [ "21"
 			]
 		}
-	],
-	"requirements": [],
-	"dependencies": []
+	]
 }
