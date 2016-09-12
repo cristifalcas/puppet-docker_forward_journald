@@ -18,18 +18,13 @@
 #
 class forward_journald (
   $ensure_package = 'installed',
-  $package_name = 'docker-forward-journald',
-  $binary_chmod = '0700',
+  $package_name   = 'docker-forward-journald',
+  $binary_chmod   = '0700',
 ) {
-  package { $package_name:
-    ensure => $ensure_package,
-  } ->
-  file { '/usr/bin/forward-journald':
-    ensure => file,
-    mode   => $binary_chmod,
-  }
-}
- => file,
+  if $::operatingsystemmajrelease == 7 {
+    package { $package_name: ensure => $ensure_package, } ->
+    file { '/usr/bin/forward-journald':
+      ensure => file,
       mode   => $binary_chmod,
     }
   }
